@@ -1,0 +1,35 @@
+ <div class="container-fluid" style="padding-top: 40px">
+    <div id="mySidenav" class="col-md-2">
+<accordion>
+  <accordion-group #group>
+   <div accordion-heading >
+      Products
+      <i class="pull-right float-xs-right glyphicon"
+         [ngClass]="{'glyphicon-chevron-down': group?.isOpen, 'glyphicon-chevron-right': !group?.isOpen}"></i>
+    </div>
+    <ul class="list-group">
+  <a [routerLink]="['/home',  {outlets: {'mainContent': 'products'}}]" class="list-group-item">Products</a>
+  <a href="#" class="list-group-item">Catagories</a>
+  <a href="#" class="list-group-item">Brands</a>
+  <a href="#" class="list-group-item">Collections</a>
+  <a href="#" class="list-group-item">Brands</a>
+    </ul>
+  </accordion-group>
+  <accordion-group #group1>
+    <div accordion-heading>
+      Orders
+      <i class="pull-right float-xs-right glyphicon"
+         [ngClass]="{'glyphicon-chevron-down': group1?.isOpen, 'glyphicon-chevron-right': !group1?.isOpen}"></i>
+    </div>
+  </accordion-group>
+
+</accordion>
+</div>
+
+<div class="col-md-9">
+
+<router-outlet name="mainContent"></router-outlet>
+
+</div>
+<div>
+
